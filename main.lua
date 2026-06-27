@@ -171,7 +171,7 @@ end
 function PluginLauncher:addToMainMenu(menu_items)
     menu_items.pluginlauncher = {
         text         = "Plugin Launcher",
-        sorting_hint = "more_tools",
+        sorting_hint = "tools",
         sub_item_table = {
             {
                 text     = "Launch",
@@ -256,7 +256,8 @@ function PluginLauncher:_buildAddMenu()
             })
         else
             table.insert(items, {
-                text     = pfullname,
+                text           = pfullname,
+                keep_menu_open = true,
                 callback = function()
                     local l = self:getList()
                     table.insert(l, { name = pname, fullname = pfullname })
